@@ -17,7 +17,7 @@ const NoteCard = (props: Note) => {
           <p className="line-clamp-2 overflow-hidden"> {props.description}</p>
           <div className="card-actions justify-end">
             {
-                props.tags.map((tag) => <div key={tag} className="badge badge-outline">{tag}</div>)
+                props?.tags ? props.tags.map((tag) => <div key={tag} className="badge badge-outline">{tag}</div>) : <></>
             }
           </div>
         </div>

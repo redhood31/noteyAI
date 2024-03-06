@@ -24,14 +24,14 @@ export default function Home() {
       <div className="mb-10 text-10 lg:text-3xl md:text-2xl sm:text-xl">
         Notey app
       </div>
-      <div className="w-full sm-w-[90%] lg-w-[40%] flex">
+      <div className="w-[90%] flex" style={{maxWidth: '700px'}}>
       <label className="input w-[90%] input-bordered flex items-center gap-2">
-        <input ref={inputRef} type="text" className="grow" placeholder="Search" />
+        <input ref={inputRef} type="text" className="grow" placeholder="Search, tag:work" />
 
         
         
       </label>
-      <button className="btn btn-square btn-primary ml-2"
+      <button className="btn btn-square btn-primary ml-2 max-w-[10%]"
             onClick={async (e)=>{
               if(inputRef.current.value == ''){
                 setNotes(getNotesList());

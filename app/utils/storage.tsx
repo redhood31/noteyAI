@@ -33,7 +33,6 @@ export const removeNote = (note_id : number)=>{
 export const getNote = (note_id : number)=>{
     let notesList = getNotesList();
     let found_note = notesList.filter((obj : Note) => obj.id == note_id)
-    // alert("yey " + JSON.stringify(found_note));
     if(found_note.length == 1){
         return found_note[0]
     }else{
@@ -66,7 +65,6 @@ export const saveNote = async(note : Note)=>{
 export const searchNotes = async(query : String)=>{
     if(query.toLowerCase().indexOf('tag:') == 0){
         let looking_for = query.toLocaleLowerCase().slice(4)
-        alert(looking_for)
         let notes = getNotesList()
         notes = notes.filter((note) => {
             let ok = false;
@@ -82,8 +80,6 @@ export const searchNotes = async(query : String)=>{
         let notes = getNotesList()
         let notes_string = JSON.stringify(notes)
         let relevant_inds = await searchAI(query, notes_string);
-        
-        alert(JSON.stringify(relevant_inds))
         let res = notes.filter((obj) => {
             return relevant_inds.includes(obj.id)
         })

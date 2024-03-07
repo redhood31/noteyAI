@@ -45,21 +45,23 @@ const NoteEditing = ({id, href} : any) => {
    <>
    
     
-    <div className="relative flex flex-col bg-white items-center h-screen w-3/5 mx-auto border rounded-md text-lg focus:outline-none focus:border-blue-500">
-    <button className="btn btn-square absolute left-2 top-2"
-            onClick={(e)=>{
-                router.push('/')
-            }}>
-        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" /></svg>
-    </button> 
+    <div className="relative flex flex-col bg-white items-center h-screen w-[97%] mx-auto border rounded-md text-lg focus:outline-none focus:border-blue-500" style={{maxWidth: '900px'}}>
+    <div className="flex w-full">
+        <button className="btn btn-square btn-error ml-3 mt-3"
+                onClick={(e)=>{
+                    router.push('/')
+                }}>
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 sm:h-6 sm:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" /></svg>
+        </button> 
 
-      <input 
-      type="text" 
-      placeholder="Type your header" 
-      className="w-full max-w-xs px-0 mx-5 mt-5 border-b-2 border-solid border-gray-500 focus:outline-none lg:text-3xl md:text-2xl sm:text-xl" 
-      onChange={handleHeadline}
-      value={header}
-      />
+        <input 
+        type="text" 
+        placeholder="Type your header" 
+        className="w-[90%] px-0 mx-5 mt-5  border-b-2 border-solid border-gray-500 focus:outline-none lg:text-3xl md:text-2xl sm:text-xl" 
+        onChange={handleHeadline}
+        value={header}
+        />
+      </div>
       
       <div className="relative border-2 border-solid border-gray-200 w-full flex-grow w-95 rounded-t-none">
       {(waiting == true ? <div className="absolute bg-opacity-5 top-0 z-50 w-full h-full bg-gray-800 flex items-center justify-center"> <span className="loading loading-ring loading-lg text-primary absolute z-60">Loading</span> </div>: <></>)}
@@ -77,7 +79,7 @@ const NoteEditing = ({id, href} : any) => {
         </div>
      </div>
       
-      <div className="flex gap-3">
+      <div className="flex gap-3 mb-10">
         <button 
             className="btn btn-primary max-w-32 mt-2" 
             onClick={(e)=>{

@@ -19,7 +19,7 @@ export default function Home() {
   
    
   return (
-    <main className="flex h-screen flex-col items-center p-5 py-10">
+    <main className="flex h-screen w-screen flex-col items-center p-5 py-10">
 
       <div className="mb-10 text-10 lg:text-3xl md:text-2xl sm:text-xl">
         Notey app
@@ -48,7 +48,7 @@ export default function Home() {
       <div className="flex-grow">
       
      </div>
-      <button className='btn btn-primary mt-10' onClick={(e)=>{
+      <button className='btn btn-primary mt-10 mb-10' onClick={(e)=>{
         router.push('/notes/new')
       }}>
         Create new note
